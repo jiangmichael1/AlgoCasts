@@ -8,6 +8,46 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+// SOLUTION #1
+
+// function anagrams(stringA, stringB) {
+//     const aCharMap = buildCharMap(stringA)
+//     const bCharMap = buildCharMap(stringB)
+
+//     if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length){
+//         return false 
+//     } 
+    
+//     for (let char in aCharMap) { //remember to use IN for iterating through objects
+//         if (aCharMap[char] !== bCharMap[char]){
+//             return false
+//         }
+//     }
+
+//     return true
+// }
+
+// function buildCharMap(string) {
+//     const charMap = {}
+    
+//     for (let char of string.replace(/[^\w]/g,'').toLowerCase()) { //use OF to iterate through an array
+//         charMap[char] = charMap[char] + 1 || 1
+//     }
+
+//     return charMap
+// }
+
+function anagrams(stringA, stringB) {
+    return cleanString(stringA) === cleanString(stringB) 
+}
+
+function cleanString(string){
+    return string
+        .replace(/[^\w]/g,'')
+        .toLowerCase()
+        .split('')
+        .sort()
+        .join('')
+}
 
 module.exports = anagrams;
