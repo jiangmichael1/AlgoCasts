@@ -32,4 +32,27 @@
 //     }
 // }
 
+function steps(n, row = 0, stair = '') {
+    //with recursive function, when row === n, we hit base case and end problem
+    //if stair string has length === n, then we hit end of the row, aka hit base case for end of row
+    if (n === row) {
+        return
+    }
+
+    if (n === stair.length) {
+        console.log(stair)
+        return steps(n, row + 1)
+    }
+
+    if (stair.length <= row) {
+        stair += '#'
+    } else {
+        stair += ' '
+    }
+
+    steps(n, row, stair)
+
+
+}
+
 module.exports = steps;
