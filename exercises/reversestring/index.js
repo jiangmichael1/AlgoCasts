@@ -7,27 +7,32 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 // Solution #1
-// function reverse(str) {
-//     return str
-//         .split('')
-//         .reverse()
-//         .join('')
-// }
+
+function reverse(str) {
+    return str
+        .split('')
+        .reverse()
+        .join('')
+}
 
 // Solution #2
+
 // function reverse(str) {
-//     let reversed = ''
+//     let reversedString = ''
 //     for (let character of str) {
-//         reversed = character + reversed;
+//         reversedString = character + reversedString
 //     }
-//     return reversed
+//     return reversedString
 // }
 
 // // Solution #3
-// function reverse(str){
-//     return str.split('').reduce((rev, char) => char + rev, '') 
-//     //reduce is used to condense all the values in an array to a single value
-//     //reduce takes in two arguments, an arrow function, and the starting initial value
-// }
 
-module.exports = reverse;
+// function reverse(str){
+//     return str
+//         .split('')
+//         .reduce((reversedString, character) => character + reversedString, '') 
+// }
+    
+    //reduce is used to condense all the values in an array to a single value
+    //reduce takes in two arguments, an arrow function, and the starting initial value
+    module.exports = reverse;
